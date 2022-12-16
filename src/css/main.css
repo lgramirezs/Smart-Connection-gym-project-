@@ -1,0 +1,505 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 15px;
+  padding: 0;
+  margin: 0;
+  line-height: normal;
+  background-color: black;
+}
+
+h2 {
+  font-size: 4rem;
+  position: relative;
+  display: inline-block;
+  padding: 0 0 40px;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 20px;
+  bottom: 0px;
+  left: 0;
+  transform: scale(0.5) skewY(-20deg) rotate(20deg);
+  background-color: blue;
+}
+
+.d-none {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.section {
+  margin-bottom: 80px;
+  width: 100%;
+}
+
+/* Navbar desktop-menu  */
+
+nav .desktop-menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 5%;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+nav .desktop-menu ul {
+  align-items: center;
+}
+
+nav ul li > a {
+  display: block;
+  position: relative;
+  padding: 20px 15px 10px 15px;
+  text-decoration: none;
+  color: white;
+}
+
+nav ul li .link::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  background-color: white;
+}
+
+nav ul li .link:hover::after {
+  transform: scaleX(1);
+}
+
+nav .sub-menu {
+  position: absolute;
+  flex-direction: column;
+  min-width: 150px;
+  background: black;
+}
+
+nav .sub-menu li > a {
+  padding: 15px;
+}
+
+nav .desktop-menu ul .more {
+  display: none;
+}
+
+/* Navbar cell-phone-menu*/
+nav .cell-phone-menu {
+  display: none;
+}
+
+nav .cell-phone-menu .header {
+  background: black;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+nav .cell-phone-menu .header a {
+  color: white;
+  display: inline-flex;
+  padding: 5px;
+  text-decoration: none;
+}
+
+nav .cell-phone-menu .header #menu-button {
+  border: none;
+  background-color: transparent;
+  color: white;
+  cursor: pointer;
+}
+
+nav .cell-phone-menu .links {
+  background-color: black;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  z-index: 1;
+}
+
+nav .cell-phone-menu .links li > a {
+  font-size: 20px;
+  display: block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: white;
+}
+
+nav .cell-phone-menu .links a:hover {
+  background: white;
+  color: black;
+}
+
+nav .cell-phone-menu .header .user-links {
+  display: flex;
+  align-items: center;
+}
+
+/* Header */
+header {
+  background-image: url(../img/main_cover4.jpg);
+  background-size: cover;
+  background-position: center top;
+  height: 100vh;
+}
+
+/* Screen */
+@media screen and (max-width: 576px) {
+  nav .cell-phone-menu {
+    display: flex;
+    flex-direction: column;
+  }
+  nav .desktop-menu {
+    display: none;
+  }
+  /* Header */
+  header {
+    background-image: url(../img/main_cover2.jpg);
+    background-size: cover;
+    background-position: center top;
+    height: 90vh;
+  }
+  .section-about div {
+    flex-wrap: wrap;
+  }
+}
+
+/* Section */
+
+.get-intouch {
+  font-size: 1.5em;
+  text-align: center;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.8);
+  position: absolute;
+  z-index: 98;
+  top: 200px;
+  left: 100px;
+  padding: 50px;
+}
+
+.get-intouch .join-us {
+  display: inline-flex;
+  align-items: center;
+  font-size: 16px;
+  padding: 10px 40px;
+  color: white;
+  background-color: blue;
+}
+
+.get-intouch .free-trial {
+  display: inline-flex;
+  align-items: center;
+  font-size: 18px;
+  padding: 10px 10px;
+  color: blue;
+  position: relative;
+  font-weight: bolder;
+}
+
+.get-intouch a {
+  text-decoration: none;
+}
+
+.get-intouch .link::after {
+  content: "";
+  position: absolute;
+  display: block;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+  background-color: blue;
+}
+
+.get-intouch .link:hover::after {
+  transform: scaleX(1);
+}
+
+@media screen and (max-width: 992px) {
+  nav .desktop-menu ul .more {
+    display: block;
+  }
+  nav .desktop-menu ul .link-hide {
+    display: none;
+  }
+  .get-intouch {
+    position: relative;
+    width: 100%;
+    margin: 50px 0;
+    top: 0;
+    left: 0;
+  }
+  .section-classes {
+    flex-wrap: wrap;
+  }
+  .section-classes div {
+    margin: 20px 0px;
+  }
+}
+
+/* section-about */
+.section-about {
+  text-align: center;
+  color: white;
+}
+
+.section-about div {
+  display: flex;
+  justify-content: center;
+}
+
+.about-content p {
+  text-align: justify;
+  padding: 0px 25px;
+}
+
+@media screen and (min-width: 576px) {
+  .section-about {
+    padding: 0 100px;
+  }
+}
+
+/* section classes */
+
+.section-classes {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url(../img/main_cover.jpg);
+  background-attachment: fixed;
+  background-size: cover;
+  width: 100%;
+  padding: 35vh 10vh;
+}
+
+.section-classes div {
+  background: white;
+  text-align: center;
+  width: 250px;
+  height: 180px;
+  transform: scale(1) skewY(-20deg) rotate(20deg);
+  cursor: pointer;
+  padding: 10px;
+}
+
+.section-classes div:hover {
+  transform: scale(1.1) skewY(-20deg) rotate(20deg);
+  transition: transform 0.6s ease;
+}
+
+.section-classes div h2 {
+  font-size: 1.8rem;
+}
+
+@media screen and (max-width: 576px) {
+  .section-classes div {
+    width: 150px;
+    height: 150px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+  }
+  .section-classes div h2 {
+    font-size: 1.5rem;
+  }
+}
+
+.section-events {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  padding: 10px;
+}
+
+.section-events div h2 {
+  color: white;
+}
+
+.section-events div table {
+  width: 100%;
+  color: white;
+  font-size: 1rem;
+  border: 1px solid #fff;
+  table-layout: fixed;
+  padding: 10px;
+}
+
+.section-events div table tr th {
+  font-size: 1.5rem;
+}
+
+.section-events div table tr td {
+  text-align: center;
+  padding: 10px;
+}
+
+@media screen and (min-width: 576px) {
+  .section-events {
+    padding: 10vh;
+  }
+}
+
+/* Gallery section */
+
+.section-gallery {
+  text-align: center;
+}
+
+.section-gallery h2 {
+  color: white;
+}
+
+.section-gallery .gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.img {
+  margin: 10px;
+  border-radius: 5px;
+  border: 1px solid #999;
+  padding: 10px;
+  width: 350px;
+  height: auto;
+}
+.img img {
+  width: 100%;
+}
+
+.img img:hover {
+  transform: scale(0.95);
+  transition: 0.3s ease;
+  cursor: pointer;
+}
+
+.full-img {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.9);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 99;
+}
+
+.full-img img {
+  width: 90%;
+  max-width: 600px;
+}
+
+.full-img span {
+  position: absolute;
+  top: 5%;
+  right: 5%;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+/* footer */
+
+footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 5px;
+  background-image: url(../img/main_cover5.jpg);
+  background-size: cover;
+  background-position: center bottom;
+  width: 100%;
+}
+
+footer .container-footer {
+  width: 90%;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 30px;
+  justify-content: space-around;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+footer .column ul li {
+  display: block;
+  list-style: none;
+  padding: 10px;
+  margin-left: -40px;
+}
+
+footer .column ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+footer .column ul p {
+  text-align: center;
+  color: white;
+}
+
+footer .column h3 {
+  color: white;
+  text-align: center;
+}
+
+@media screen and (min-width: 576px) {
+  footer {
+    padding: 90px;
+  }
+
+  footer .column ul p {
+    text-align: left;
+  }
+}
+
+/* section shop */
+
+.section-shop {
+  text-align: center;
+}
+
+.section-shop h2 {
+  color: white;
+}
+
+.section-shop .section-shop-box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.section-shop .section-shop-box div {
+  background-color: white;
+  width: 40%;
+  min-width: 300px;
+  margin: 5px;
+  cursor: pointer;
+}
