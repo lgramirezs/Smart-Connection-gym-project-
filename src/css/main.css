@@ -430,6 +430,7 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  flex-direction: column;
   padding: 15px 5px;
   background-image: url(../img/main_cover5.jpg);
   background-size: cover;
@@ -477,6 +478,16 @@ footer .column h3 {
   footer .column ul p {
     text-align: left;
   }
+}
+
+.author-description .author {
+  color: white;
+  text-align: center;
+}
+
+.author-description .author a{
+  color: white;
+  text-decoration: none;
 }
 
 /* section shop */
